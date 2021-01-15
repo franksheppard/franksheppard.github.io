@@ -1,33 +1,12 @@
-<!doctype html>
-<head>
-<title>Site Maintenance</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1G1574240"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Q1G1574240');
-</script>
-</head>
-
-<style>
-  body { text-align: center; padding: 150px; }
-  h1 { font-size: 50px; }
-  body { font: 20px Helvetica, sans-serif; color: #333; }
-  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
-  a { color: #dc8100; text-decoration: none; }
-  a:hover { color: #333; text-decoration: none; }
-</style>
-
-<article>
-    <h1>We&rsquo;ll be back soon!</h1>
-    <div>
-        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:ciobanul@franksheppard.com">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
-        <p>&mdash; Florin Ciobanu</p>
-    </div>
-</article>
-<!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9196907.js"></script>
-<!-- End of HubSpot Embed Code -->
+---
+layout: home
+title: Hi, I'm Florin,
+subtitle: This is where I will tell my friends way too much about me
+---
+{% if page.js %}
+  {% for js in page.js %}
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/9196907.js"></script>
+    <!-- End of HubSpot Embed Code -->
+  {% endfor %}
+{% endif %}
