@@ -138,10 +138,10 @@ google_analytics: "G-Q1G1574240"
 # Matomo (aka Piwik) Web statistics
 # Uncomment the following section to enable Matomo. The opt-out parameter controls
 # whether or not you want to allow users to opt out of tracking.
-matomo:
- site_id: "9"
- uri: "demo.wiki.pro"
- opt-out: true
+# matomo:
+#  site_id: "9"
+#  uri: "demo.wiki.pro"
+#  opt-out: false
 
 # --- Comments --- #
 
