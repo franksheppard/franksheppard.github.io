@@ -128,6 +128,7 @@ footer-link-col: "#272F54"
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
 gtag: "G-Q1G1574240"
+google_analytics: "G-Q1G1574240"
 
 # Fill in your Google Analytics ID to track your website using Google Analytics
 # google_analytics: "G-Q1G1574240"
