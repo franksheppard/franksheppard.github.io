@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>Florin Ciobanu</title>
+    
+    
+    <description>This website is a virtual proof that I&apos;m awesome</description>
+    
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>How To Use Nmap to Scan for Open Ports on your VPS</title>
+        <description>
+          
+          Introduction Networking is an expansive and overwhelming topic for many budding system administrators. There are various layers, protocols, and interfaces, and many tools and utilities that must be mastered to understand them. This guide will cover the concept of “ports” and will demonstrate how the nmap program can be used...
+        </description>
+        <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2022-11-30-use-nmap-port-scanner/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-30-use-nmap-port-scanner/</guid>
+      </item>
+    
+      <item>
+        <title>Run different versions of Python</title>
+        <description>
+          Setup your Mac to work with multiple versions of Python - 
+          Create Python virtual environments While the software industry matures a number of release , versions are available. If you want to use multiple versions of Python on the same computer you can use Pyenv. In combination with virtualenv you can create a dynamic local Python development environment Selecting the Python...
+        </description>
+        <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2022-11-30-multi-python-setup/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-30-multi-python-setup/</guid>
+      </item>
+    
+      <item>
+        <title>Configure SSH key</title>
+        <description>
+          Setup your git workflow to work with ssh - 
+          Create your key either for a speciffic emai address or for your use ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; ssh-keygen -t rsa -b 4096 -C $USER Add the key to ssh ssh-add ~/.ssh/id_rsa The keys are usually saved in ls ~/.ssh the default key name is id_rsa for private...
+        </description>
+        <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2022-11-22-setup-ssh-key/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-22-setup-ssh-key/</guid>
+      </item>
+    
+      <item>
+        <title>Configure git with SSH</title>
+        <description>
+          Setup your git workflow to work with ssh - 
+          
+
+        </description>
+        <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2022-11-22-setup-git-ssh/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-22-setup-git-ssh/</guid>
+      </item>
+    
+      <item>
+        <title>How to use git with many Github accounts</title>
+        <description>
+          Setup your git to work with multiple Github accounts - 
+          For my workflow I opted to create another Github account to use it for work projects. In order to juggle my work and personal Github accounts, I’ve set up git cli with different ssh keys. I’ve tried using the same ssh key for both Github accounts but the key is...
+        </description>
+        <pubDate>Tue, 22 Nov 2022 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2022-11-22-multiple-github-accounts/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-22-multiple-github-accounts/</guid>
+      </item>
+    
+      <item>
+        <title>How to use frsh-cli to automate your projects infrastructure</title>
+        <description>
+          A frsh-cli tutorial - 
+          Setting up frsh-cli
+
+
+        </description>
+        <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2022-11-17-automating-project-infrastructure/</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11-17-automating-project-infrastructure/</guid>
+      </item>
+    
+      <item>
+        <title>Getting started with Sphinx</title>
+        <description>
+          How to get started with Sphinx - 
+          This is a demo post to show you how to write blog posts with markdown. I strongly encourage you to take 5 minutes to learn how to write in markdown - it’ll teach you how to transform regular text into bold/italics/headings/tables/etc. In this post, I want to share the basics...
+        </description>
+        <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2021-01-28-getting-started-with-sphinx/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021-01-28-getting-started-with-sphinx/</guid>
+      </item>
+    
+      <item>
+        <title>Sample blog post</title>
+        <description>
+          Each post also has a subtitle - 
+          This is a demo post to show you how to write blog posts with markdown. I strongly encourage you to take 5 minutes to learn how to write in markdown - it’ll teach you how to transform regular text into bold/italics/headings/tables/etc. Here is some bold text Here is a secondary...
+        </description>
+        <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+        <link>http://localhost:4000/2020-02-28-test-markdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020-02-28-test-markdown/</guid>
+      </item>
+    
+  </channel>
+</rss>

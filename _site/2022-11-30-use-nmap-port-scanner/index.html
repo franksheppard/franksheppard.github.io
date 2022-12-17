@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>How To Use Nmap to Scan for Open Ports on your VPS</title>
+
+  
+  <meta name="author" content="Florin Ciobanu">
+  
+
+  <meta name="description" content="Introduction Networking is an expansive and overwhelming topic for many budding system administrators. There are various layers, protocols, and interfaces, and many tools and utilities that must be mastered to understand them. This guide will cover the concept of “ports” and will demonstrate how the nmap program can be used...">
+
+  
+
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Florin Ciobanu" href="http://localhost:4000/feed.xml">
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1G1574240"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q1G1574240');
+</script>
+
+
+  
+
+  
+<!-- Google Analytics -->
+<!-- <script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'G-Q1G1574240', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1G1574240"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q1G1574240');
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="Florin Ciobanu">
+  <meta property="og:title" content="How To Use Nmap to Scan for Open Ports on your VPS">
+  <meta property="og:description" content="Introduction Networking is an expansive and overwhelming topic for many budding system administrators. There are various layers, protocols, and interfaces, and many tools and utilities that must be mastered to understand them. This guide will cover the concept of “ports” and will demonstrate how the nmap program can be used...">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/path.jpg">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Florin Ciobanu">
+  <meta property="og:article:published_time" content="2022-11-30T00:00:00+00:00">
+  <meta property="og:url" content="http://localhost:4000/2022-11-30-use-nmap-port-scanner/">
+  <link rel="canonical" href="http://localhost:4000/2022-11-30-use-nmap-port-scanner/">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="How To Use Nmap to Scan for Open Ports on your VPS">
+  <meta property="twitter:description" content="Introduction Networking is an expansive and overwhelming topic for many budding system administrators. There are various layers, protocols, and interfaces, and many tools and utilities that must be mastered to understand them. This guide will cover the concept of “ports” and will demonstrate how the nmap program can be used...">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/path.jpg">
+  
+
+  
+
+
+  
+
+  
+
+</head>
+
+<!-- <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KPPS4Z5');</script>
+<!-- End Google Tag Manager --> -->
+
+<body>
+  <!-- <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPPS4Z5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --> -->
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="http://localhost:4000/">Florin Ciobanu</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/aboutme">About Me</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="http://localhost:4000/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/avatar-icon.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+  <div id="header-big-imgs" data-num-img=1
+    
+    
+    
+      
+      data-img-src-1="http://localhost:4000/assets/img/path.jpg"
+    
+    
+    
+  ></div>
+
+
+<header class="header-section has-img">
+
+<div class="big-img intro-header">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>How To Use Nmap to Scan for Open Ports on your VPS</h1>
+          
+
+          
+            <span class="post-meta">Posted on November 30, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class='img-desc'></span>
+</div>
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>How To Use Nmap to Scan for Open Ports on your VPS</h1>
+          
+
+          
+            <span class="post-meta">Posted on November 30, 2022</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <h2 id="introduction">Introduction</h2>
+
+<p>Networking is an expansive and overwhelming topic for many budding system administrators. There are various layers, protocols, and interfaces, and many tools and utilities that must be mastered to understand them.</p>
+
+<p>This guide will cover the concept of “ports” and will demonstrate how the nmap program can be used to get information about the state of a machine’s ports on a network.</p>
+
+<p>Note: This tutorial covers IPv4 security. In Linux, IPv6 security is maintained separately from IPv4. For example, “nmap” scans IPv4 addresses by default but can also scan IPv6 addresses if the proper option is specified (nmap -6).</p>
+
+<p>If your VPS is configured for IPv6, please remember to secure both your IPv4 and IPv6 network interfaces with the appropriate tools. For more information about IPv6 tools, refer to this guide: How To Configure Tools to Use IPv6 on a Linux VPS</p>
+
+<p>What Are Ports? There are many layers in the OSI networking model. The transport layer is the layer primarily concerned with the communication between different services and applications.</p>
+
+<p>This layer is the main layer that ports are associated with.</p>
+
+<h2 id="port-terminology">Port Terminology</h2>
+
+<p>Some knowledge of terminology is needed to understand port configuration. Here are some terms that will help you understand the discussion that will follow:</p>
+
+<p>Port:</p>
+
+<p>An addressable network location implemented inside of the operating system that helps distinguish traffic destined for different applications or services.</p>
+
+<p>Internet Sockets:</p>
+
+<p>A file descriptor that specifies an IP address and an associated port number, as well as the transfer protocol that will be used to handle the data.</p>
+
+<p>Binding:</p>
+
+<p>The process that takes place when an application or service uses an internet socket to handle the data it is inputting and outputting.</p>
+
+<p>Listening:</p>
+
+<p>A service is said to be “listening” on a port when it is binding to a port/protocol/IP address combination in order to wait for requests from clients of the service.
+Upon receiving a request, it then establishes a connection with the client (when appropriate) using the same port it has been listening on. Because the internet sockets used are associated with a specific client IP address, this does not prevent the server from listening for and serving requests to other clients simultaneously.</p>
+
+<p>Port Scanning:</p>
+
+<p>Port scanning is the process of attempting to connect to a number of sequential ports, for the purpose of acquiring information about which are open and what services and operating system are behind them. Common Ports Ports are specified by a number ranging from 1 to 65535.
+Many ports below 1024 are associated with services that Linux and Unix-like operating systems consider critical to essential network functions, so you must have root privileges to assign services to them. Ports between 1024 and 49151 are considered “registered”. This means that they can be “reserved” (in a very loose sense of the word) for certain services by issuing a request to the IANA (Internet Assigned Numbers Authority). They are not strictly enforced, but they can give a clue as to the possible services running on a certain port. Ports between 49152 and 65535 cannot be registered and are suggested for private use. Because of the vast number of available ports, you won’t ever have to be concerned with the majority of the services that tend to bind to specific ports.</p>
+
+<p>However, there are some ports that are worth knowing due to their ubiquity. The following is only a very incomplete list:</p>
+<ul>
+  <li>20: FTP data</li>
+  <li>21: FTP control port</li>
+  <li>22: SSH</li>
+  <li>23: Telnet &lt;= Insecure, not recommended for most uses</li>
+  <li>25: SMTP</li>
+  <li>43: WHOIS protocol</li>
+  <li>53: DNS services</li>
+  <li>67: DHCP server port</li>
+  <li>68: DHCP client port</li>
+  <li>80: HTTP traffic &lt;= Normal web traffic</li>
+  <li>110: POP3 mail port</li>
+  <li>113: Ident authentication services on IRC networks</li>
+  <li>143: IMAP mail port</li>
+  <li>161: SNMP</li>
+  <li>194: IRC</li>
+  <li>389: LDAP port</li>
+  <li>443: HTTPS &lt;= Secure web traffic</li>
+  <li>587: SMTP &lt;= message submission port</li>
+  <li>631: CUPS printing daemon port</li>
+  <li>666: DOOM &lt;= This legacy FPS game actually has its own special port</li>
+</ul>
+
+<p>These are just a few of the services commonly associated with ports. You should be able to find the appropriate ports for the applications you are trying to configure within their respective documentation.</p>
+
+<p>Most services can be configured to use ports other than the default, but you must ensure that both the client and server are configured to use a non-standard port.</p>
+
+<p>You can get a short list of some common ports by typing:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>less /etc/services 
+</code></pre></div></div>
+
+<p>It will give you a list of common ports and their associated services:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> tcpmux 1/tcp <span class="c"># TCP port service multiplexer echo 7/tcp echo 7/udp discard 9/tcp sink null discard 9/udp sink null systat 11/tcp users daytime 13/tcp daytime 13/udp netstat 15/tcp qotd 17/tcp quote msp 18/tcp # message send protocol . . . </span>
+</code></pre></div></div>
+
+<p>We will see in the section about nmap how to get a more complete list.</p>
+
+<p>How To Check Your Own Open Ports There are a number of tools that can be used to scan for open ports.</p>
+
+<p>One that is installed by default on most Linux distributions is netstat.</p>
+
+<p>You can quickly discover which services you are running by issuing the command with the following parameters:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>netstat <span class="nt">-plunt</span> Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program name tcp 0 0 0.0.0.0:22 0.0.0.0:<span class="k">*</span> LISTEN 785/sshd
+
+tcp6 0 0 :::22 :::<span class="k">*</span> LISTEN 785/sshd This shows the port and listening socket associated with the service and lists both UDP and TCP protocols.
+</code></pre></div></div>
+<h2 id="install-nmap">Install Nmap</h2>
+
+<p>Part of securing a network involves doing vulnerability testing. This means trying to infiltrate your network and discover weaknesses in the same way that an attacker might.</p>
+
+<p>Out of all of the available tools for this, nmap is perhaps the most common and powerful.</p>
+
+<p>You can install nmap on an Ubuntu or Debian machine by entering:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update 
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>nmap 
+</code></pre></div></div>
+<p>One of the side benefits of installing this software is an improved port mapping file.</p>
+
+<p>You can see a much more extensive association between ports and services by looking in this file:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>less /usr/share/nmap/nmap-services 
+<span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> tcpmux 1/tcp 0.001995 <span class="c"># TCP Port Service Multiplexer [rfc-1078] tcpmux 1/udp 0.001236 # TCP Port Service Multiplexer compressnet 2/tcp 0.000013 # Management Utility compressnet 2/udp 0.001845 # Management Utility compressnet 3/tcp 0.001242 # Compression Process compressnet 3/udp 0.001532 # Compression Process unknown 4/tcp 0.000477 rje 5/udp 0.000593 # Remote Job Entry unknown 6/tcp 0.000502 echo 7/tcp 0.004855 echo 7/udp 0.024679 echo 7/sctp 0.000000 . . .</span>
+</code></pre></div></div>
+<p>Besides having almost 20 thousand lines, this file also has additional fields, such as the third column, which lists the open frequency of that port as discovered during research scans on the internet.</p>
+
+<p>How To Scan Ports with Nmap Nmap can reveal a lot of information about a host. It can also make system administrators of the target system think that someone has malicious intent. For this reason, only test it on servers that you own or in situations where you’ve notified the owners.</p>
+
+<p>The nmap creators actually provide a test server located at:</p>
+
+<p><code class="language-plaintext highlighter-rouge">scanme.nmap.org</code> This, or your own VPS instances are good targets for practicing nmap.</p>
+
+<p>Here are some common operations that can be performed with nmap. We will run them all with sudo privileges to avoid returning partial results for some queries. Some commands may take a long while to complete:</p>
+
+<p>Scan for the host operating system:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo nmap -O remote_host</code></p>
+
+<p>Skip network discovery portion and assume the host is online. This is useful if you get a reply that says “Note: Host seems down” in your other tests. Add this to the other options:</p>
+
+<p>Specify a range with “-“ or “/24” to scan a number of hosts at once:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo nmap -PN remote_host</code></p>
+
+<p>Scan a network range for available services:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo nmap -PN xxx.xxx.xxx.xxx-yyy</code></p>
+
+<p>Scan without preforming a reverse DNS lookup on the IP address specified.</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo nmap -sP network_address_range</code></p>
+
+<p>This should speed up your results in most cases:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo nmap -n remote_host</code></p>
+
+<p>Scan a specific port instead of all common ports:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo nmap -p port_number remote_host</code></p>
+
+<p>To scan for TCP connections, nmap can perform a 3-way handshake (explained below), with the targeted port. Execute it like this:</p>
+
+<p><code class="language-plaintext highlighter-rouge"> sudo nmap -sT remote_host</code></p>
+
+<p>To scan for UDP connections, type:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo nmap -sU remote_host</code></p>
+
+<p>Scan for every TCP and UDP open port:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo nmap -n -PN -sT -sU -p- remote_host A TCP "SYN"</code> scan exploits the way that TCP establishes a connection.</p>
+
+<p>To start a TCP connection, the requesting end sends a “synchronize request” packet to the server. The server then sends a “synchronize acknowledgment” packet back. The original sender then sends back an “acknowledgment” packet back to the server, and a connection is established.</p>
+
+<p>A “SYN” scan, however, drops the connection when the first packet is returned from the server. This is called a “half-open” scan and used to be promoted as a way to surreptitiously scan for ports, since the application associated with that port would not receive the traffic, because the connection is never completed.</p>
+
+<p>This is no longer considered stealthy with the adoption of more advanced firewalls and the flagging of incomplete SYN request in many configurations.</p>
+
+<p>To perform a SYN scan, execute:</p>
+
+<p>sudo nmap -sS remote_host A more stealthy approach is sending invalid TCP headers, which, if the host conforms to the TCP specifications, should send a packet back if that port is closed. This will work on non-Windows based servers.</p>
+
+<p>You can use the “-sF”, “-sX”, or “-sN” flags. They all will produce the response we are looking for:</p>
+
+<p>sudo nmap -PN -p port_number -sN remote_host To see what version of a service is running on the host, you can try this command. It tries to determine the service and version by testing different responses from the server:</p>
+
+<p>sudo nmap -PN -p port_number -sV remote_host There are many other command combinations that you can use, but this should get you started on exploring your networking vulnerabilities.</p>
+
+<p>Conclusion Understanding port configuration and how to discover what the attack vectors are on your server is only one step to securing your information and your VPS. It is an essentail skill, however.</p>
+
+<p>Discovering which ports are open and what information can be obtained from the services accepting connections on those ports gives you the information that you need to lock down your server. Any extraneous information leaked out of your machine can be used by a malicious user to try to exploit known vulnerabilities or develop new ones. The less they can figure out, the better.</p>
+
+<p>@franksheppard</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#python">python</a>
+          
+            <a href="/tags#mac">mac</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=How+To+Use+Nmap+to+Scan+for+Open+Ports+on+your+VPS&url=http%3A%2F%2Flocalhost%3A4000%2F2022-11-30-use-nmap-port-scanner%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2022-11-30-use-nmap-port-scanner%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2022-11-30-use-nmap-port-scanner%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2022-11-30-multi-python-setup/" data-toggle="tooltip" data-placement="top" title="Run different versions of Python">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
+      
+  
+  
+  
+
+  
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="mailto:ciobanul@franksheppard.com" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.facebook.com/mflorinciobanu" title="Facebook">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Facebook</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/franksheppard" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://linkedin.com/in/florin-ciobanu" title="LinkedIn">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">LinkedIn</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.youtube.com/channel/UCHHezaHIyH3oULjqwYKHi2g" title="YouTube">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">YouTube</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://patreon.com/patreon.com/user?u=21680525" title="Patreon">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-patreon fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Patreon</span>
+    </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Florin Ciobanu
+        &nbsp;&bull;&nbsp;
+      
+      2022
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="http://localhost:4000/">www.ciobanul.co.uk</a>
+        </span>
+      
+
+      
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+
+
+
+
+
+
+
+  
+  <!-- Start of HubSpot Embed Code -->
+<script
+  type="text/javascript"
+  id="hs-script-loader"
+  async
+  defer
+  src="//js.hs-scripts.com/9196907.js"
+></script>
+<!-- End of HubSpot Embed Code -->
+
+</body>
+</html>
+
+
