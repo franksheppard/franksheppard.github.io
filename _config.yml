@@ -222,7 +222,7 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
-url: "https://ciobanul.co.uk" 
+url: "https://www.ciobanul.co.uk" 
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
