@@ -8,5 +8,5 @@ share-img: /assets/img/path.jpg
 tags: [git, ssh]
 ---
 
-# Setting up [frsh-cli]()
+# Setting up frsh-cli
 
