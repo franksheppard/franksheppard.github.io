@@ -44,7 +44,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #2568FB;
+  color: #FEFFFF;
 }
 blockquote {
   color: #808080;
@@ -76,12 +76,12 @@ hr.small {
 ::-moz-selection {
   color: #fff;
   text-shadow: none;
-  background-color: #2568FB;
+  background-color: #FEFFFF;
 }
 ::selection {
   color: #fff;
   text-shadow: none;
-  background-color: #2568FB;
+  background-color: #FEFFFF;
 }
 img::selection {
   color: #fff;
@@ -116,8 +116,8 @@ img {
 /* --- Navbar --- */
 
 .navbar-custom {
-  background-color: #FECD45;
-  border-bottom: 1px solid #2568FB;
+  background-color: #2568FB;
+  border-bottom: 1px solid #FEFFFF;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   
   -webkit-transition: padding .5s ease-in-out;
@@ -181,7 +181,7 @@ img {
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav .nav-link {
   font-weight: 800;
-  color: #121613;
+  color: #FECD45;
 }
 
 .navbar-toggler {
@@ -248,11 +248,11 @@ img {
 .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
   white-space: normal;
   padding: 0.625rem;
-  background-color: #FECD45;
+  background-color: #2568FB;
   text-decoration: none !important;
   border-width: 0 1px 1px 1px;
   font-weight: normal;
-  color: #121613;
+  color: #FECD45;
 }
 
 @media (min-width: 1200px) {
@@ -262,14 +262,14 @@ img {
 
   .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
     padding-left: 0.625rem;
-    border: 1px solid #2568FB;
+    border: 1px solid #FEFFFF;
     border-width: 0 1px 1px;
   }
 }
 
 @media (max-width: 1199px) {
   .navbar-custom .navbar-collapse {
-    border-top: 1px solid #2568FB;
+    border-top: 1px solid #FEFFFF;
     margin: 0 -1rem;
   }
 
@@ -295,7 +295,7 @@ img {
 .navbar-custom .navbar-nav .nav-link:focus,
 .navbar-custom .navbar-nav .dropdown-menu .dropdown-item:hover,
 .navbar-custom .navbar-nav .dropdown-menu .dropdown-item:focus {
-  color: #2568FB;
+  color: #FEFFFF;
 }
 
 .navbar-custom .avatar-container {
@@ -439,7 +439,7 @@ footer .footer-custom-content {
 .post-preview a:focus,
 .post-preview a:hover {
   text-decoration: none;
-  color: #2568FB;
+  color: #FEFFFF;
 }
 
 .post-preview .post-title {
@@ -786,8 +786,8 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 .pagination .page-item .page-link:hover,
 .pagination .page-item .page-link:focus {
   color: #FFF;
-  border: 1px solid #2568FB;
-  background-color: #2568FB;
+  border: 1px solid #FEFFFF;
+  background-color: #FEFFFF;
 }
 
 /* --- Tables --- */

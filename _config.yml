@@ -16,7 +16,11 @@ author: Florin Ciobanu
 navbar-links:
   About Me: "/pages/aboutme"
   Portfolio:
-     - FRSH CLI: "/pages/frshcli"
+    - FRSH CLI: "/pages/frshcli"
+    - FRSH Pay: "/pages/frshpay"
+    - FRSH Coin: "/pages/frshcoin"
+    - Realstar: "/pages/realstar"
+    - Photo Galery: "/pages/photogalery"
   Blog: "/pages/blog"
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
@@ -98,14 +102,14 @@ feed_show_tags: true
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#FECD45"
-navbar-text-col: "#121613"
-navbar-border-col: "#2568FB"
+navbar-col: "#2568FB"
+navbar-text-col: "#FECD45"
+navbar-border-col: "#FEFFFF"
 page-col: "#FECD45"
 # text-col: "#2568FB"
 text-col: "#121613"
 link-col: "#008AFF"
-hover-col: "#2568FB"
+hover-col: "#FEFFFF"
 footer-col: "#FECD45"
 footer-text-col: "#121613"
 footer-link-col: "#121613"
