@@ -67,40 +67,5 @@
         <guid isPermaLink="true">http://localhost:4000/2022-11-22-multiple-github-accounts/</guid>
       </item>
     
-      <item>
-        <title>How to use frsh-cli to automate your projects infrastructure</title>
-        <description>
-          A frsh-cli tutorial - 
-          Setting up frsh-cli
-
-
-        </description>
-        <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2022-11-17-automating-project-infrastructure/</link>
-        <guid isPermaLink="true">http://localhost:4000/2022-11-17-automating-project-infrastructure/</guid>
-      </item>
-    
-      <item>
-        <title>Getting started with Sphinx</title>
-        <description>
-          How to get started with Sphinx - 
-          This is a demo post to show you how to write blog posts with markdown. I strongly encourage you to take 5 minutes to learn how to write in markdown - it’ll teach you how to transform regular text into bold/italics/headings/tables/etc. In this post, I want to share the basics...
-        </description>
-        <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2021-01-28-getting-started-with-sphinx/</link>
-        <guid isPermaLink="true">http://localhost:4000/2021-01-28-getting-started-with-sphinx/</guid>
-      </item>
-    
-      <item>
-        <title>Sample blog post</title>
-        <description>
-          Each post also has a subtitle - 
-          This is a demo post to show you how to write blog posts with markdown. I strongly encourage you to take 5 minutes to learn how to write in markdown - it’ll teach you how to transform regular text into bold/italics/headings/tables/etc. Here is some bold text Here is a secondary...
-        </description>
-        <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
-        <link>http://localhost:4000/2020-02-28-test-markdown/</link>
-        <guid isPermaLink="true">http://localhost:4000/2020-02-28-test-markdown/</guid>
-      </item>
-    
   </channel>
 </rss>

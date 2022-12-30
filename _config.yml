@@ -14,7 +14,10 @@ author: Florin Ciobanu
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "aboutme"
+  About Me: "/pages/aboutme"
+  Portfolio:
+     - FRSH CLI: "/pages/frshcli"
+  Blog: "/pages/blog"
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
   #   - Learn markdown: "https://www.markdowntutorial.com/"
@@ -95,16 +98,17 @@ feed_show_tags: true
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#FFFFFF"
-navbar-text-col: "#272F54"
-navbar-border-col: "#010204"
-page-col: "#FFFFFF"
-text-col: "#272F54"
+navbar-col: "#FECD45"
+navbar-text-col: "#121613"
+navbar-border-col: "#2568FB"
+page-col: "#FECD45"
+# text-col: "#2568FB"
+text-col: "#121613"
 link-col: "#008AFF"
-hover-col: "#EE5149"
-footer-col: "#FFFFFF"
-footer-text-col: "#777777"
-footer-link-col: "#272F54"
+hover-col: "#2568FB"
+footer-col: "#FECD45"
+footer-text-col: "#121613"
+footer-link-col: "#121613"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
