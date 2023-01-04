@@ -15,12 +15,12 @@ author: Florin Ciobanu
 
 navbar-links:
   About Me: "/pages/aboutme"
-  Portfolio:
+  My Projects:
     - FRSH CLI: "/pages/frshcli"
     - FRSH Pay: "/pages/frshpay"
     - FRSH Coin: "/pages/frshcoin"
     - Realstar: "/pages/realstar"
-    - Photo Galery: "/pages/photogalery"
+    - Photography: "/pages/photogalery"
   Blog: "/pages/blog"
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"

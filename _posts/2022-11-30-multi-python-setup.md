@@ -2,9 +2,9 @@
 layout: post
 title: Run different versions of Python
 subtitle: Setup your Mac to work with multiple versions of Python 
-cover-img: /assets/img/path.jpg
+# cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
-share-img: /assets/img/path.jpg
+# share-img: /assets/img/path.jpg
 tags: [python, mac]
 published: true
 ---
