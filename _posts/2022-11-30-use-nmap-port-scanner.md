@@ -26,26 +26,17 @@ This layer is the main layer that ports are associated with.
 
 Some knowledge of terminology is needed to understand port configuration. Here are some terms that will help you understand the discussion that will follow:
 
-Port: 
-
+Port:
 An addressable network location implemented inside of the operating system that helps distinguish traffic destined for different applications or services. 
 
-Internet Sockets: 
+Internet Sockets: A file descriptor that specifies an IP address and an associated port number, as well as the transfer protocol that will be used to handle the data. 
 
-A file descriptor that specifies an IP address and an associated port number, as well as the transfer protocol that will be used to handle the data. 
+Binding: The process that takes place when an application or service uses an internet socket to handle the data it is inputting and outputting. 
 
-Binding: 
-
-The process that takes place when an application or service uses an internet socket to handle the data it is inputting and outputting. 
-
-Listening: 
-
-A service is said to be "listening" on a port when it is binding to a port/protocol/IP address combination in order to wait for requests from clients of the service.
+Listening: A service is said to be "listening" on a port when it is binding to a port/protocol/IP address combination in order to wait for requests from clients of the service.
 Upon receiving a request, it then establishes a connection with the client (when appropriate) using the same port it has been listening on. Because the internet sockets used are associated with a specific client IP address, this does not prevent the server from listening for and serving requests to other clients simultaneously.
 
-Port Scanning: 
-
-Port scanning is the process of attempting to connect to a number of sequential ports, for the purpose of acquiring information about which are open and what services and operating system are behind them. Common Ports Ports are specified by a number ranging from 1 to 65535.
+Port Scanning: Port scanning is the process of attempting to connect to a number of sequential ports, for the purpose of acquiring information about which are open and what services and operating system are behind them. Common Ports Ports are specified by a number ranging from 1 to 65535.
 Many ports below 1024 are associated with services that Linux and Unix-like operating systems consider critical to essential network functions, so you must have root privileges to assign services to them. Ports between 1024 and 49151 are considered "registered". This means that they can be "reserved" (in a very loose sense of the word) for certain services by issuing a request to the IANA (Internet Assigned Numbers Authority). They are not strictly enforced, but they can give a clue as to the possible services running on a certain port. Ports between 49152 and 65535 cannot be registered and are suggested for private use. Because of the vast number of available ports, you won't ever have to be concerned with the majority of the services that tend to bind to specific ports. 
 
 However, there are some ports that are worth knowing due to their ubiquity. The following is only a very incomplete list:
@@ -183,5 +174,3 @@ sudo nmap -PN -p port_number -sV remote_host There are many other command combin
 Conclusion Understanding port configuration and how to discover what the attack vectors are on your server is only one step to securing your information and your VPS. It is an essentail skill, however.
 
 Discovering which ports are open and what information can be obtained from the services accepting connections on those ports gives you the information that you need to lock down your server. Any extraneous information leaked out of your machine can be used by a malicious user to try to exploit known vulnerabilities or develop new ones. The less they can figure out, the better.
-
-@franksheppard

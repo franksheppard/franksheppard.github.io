@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use git with many Github accounts
+title: How to use git with multi Github accounts
 subtitle: Setup your git to work with multiple Github accounts
 cover-img: /assets/img/markus-winkler-ZDwh_sxsX2g-unsplash.jpg
 thumbnail-img: /assets/img/roman-synkevych-wX2L8L-fGeA-unsplash-thumb.jpeg

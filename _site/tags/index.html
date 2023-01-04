@@ -108,8 +108,6 @@
   <meta property="og:description" content="{% assign date_format = site.date_format | default: &quot;%B %-d, %Y&quot; %} {%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:&apos;,&apos; | sort -%} {%- for tag...">
 
   
-  <meta property="og:image" content="http://localhost:4000/assets/img/avatar-icon.png">
-  
 
   
   <meta property="og:type" content="website">
@@ -127,8 +125,6 @@
   <meta property="twitter:description" content="{% assign date_format = site.date_format | default: &quot;%B %-d, %Y&quot; %} {%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:&apos;,&apos; | sort -%} {%- for tag...">
 
   
-  <meta name="twitter:image" content="http://localhost:4000/assets/img/avatar-icon.png">
-  
 
   
 
@@ -136,6 +132,13 @@
   
 
   
+
+   <!-- jQuery -->
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript"></script>
+          
+   <!-- nanogallery2 -->
+   <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+   <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
 
 </head>
 
@@ -182,14 +185,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   
 
-  
-    <div class="avatar-container">
-      <div class="avatar-img-border">
-        <a href="http://localhost:4000/">
-          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/avatar-icon.png" />
-        </a>
-      </div>
-    </div>
   
 
 </nav>
@@ -249,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         &nbsp;github&nbsp;(1)
     </h2>
     <div class="post-list"><div class="tag-entry">
-                <a href="/2022-11-22-multiple-github-accounts/">How to use git with many Github accounts</a>
+                <a href="/2022-11-22-multiple-github-accounts/">How to use git with multi Github accounts</a>
                 <div class="entry-date">
                     <time datetime="2022-11-22T00:00:00+00:00">November 22, 2022</time>
                 </div>
@@ -296,7 +291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <time datetime="2022-11-22T00:00:00+00:00">November 22, 2022</time>
                 </div>
             </div><div class="tag-entry">
-                <a href="/2022-11-22-multiple-github-accounts/">How to use git with many Github accounts</a>
+                <a href="/2022-11-22-multiple-github-accounts/">How to use git with multi Github accounts</a>
                 <div class="entry-date">
                     <time datetime="2022-11-22T00:00:00+00:00">November 22, 2022</time>
                 </div>
@@ -380,7 +375,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Florin Ciobanu
         &nbsp;&bull;&nbsp;
       
-      2022
+      2023
 
       
         &nbsp;&bull;&nbsp;

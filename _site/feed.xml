@@ -57,7 +57,7 @@
       </item>
     
       <item>
-        <title>How to use git with many Github accounts</title>
+        <title>How to use git with multi Github accounts</title>
         <description>
           Setup your git to work with multiple Github accounts - 
           For my workflow I opted to create another Github account to use it for work projects. In order to juggle my work and personal Github accounts, I’ve set up git cli with different ssh keys. I’ve tried using the same ssh key for both Github accounts but the key is...
