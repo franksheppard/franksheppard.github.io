@@ -4,9 +4,11 @@ title: FRSH CLI
 subtitle: Automating project resources allocation 
 ---
 
+# Whitepaper
+
 ## Abstract
 
-A SaaS platform to automate creation and allocation of resources for new projects.
+FRSH CLI is a SaaS platform to automate creation and allocation of resources for new projects.
 
 ## Intoduction
 

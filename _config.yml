@@ -15,12 +15,12 @@ author: Florin Ciobanu
 
 navbar-links:
   About Me: "/pages/aboutme"
-  My Projects:
+  Projects:
     - FRSH CLI: "/pages/frshcli"
     - FRSH Pay: "/pages/frshpay"
     - FRSH Coin: "/pages/frshcoin"
     - Realstar: "/pages/realstar"
-    - Photography: "/pages/photogalery"
+    - Photo: "/pages/photography"
   Blog: "/pages/blog"
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
@@ -218,6 +218,11 @@ defaults:
       path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
+  -
+    scope:
+      path: "" # any file that's not a post will be a "page" layout by default
+    values:
+      layout: "landing"
 
 # Exclude these files from production site
 exclude:
