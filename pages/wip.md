@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Portfolio
+title: Work in progress
 subtitle: What I've been working on
 ---
 

@@ -22,6 +22,7 @@ navbar-links:
     - Realstar: "/pages/realstar"
     - Photo: "/pages/photography"
   Blog: "/pages/blog"
+  Wip: "/pages/wip"
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
   #   - Learn markdown: "https://www.markdowntutorial.com/"
