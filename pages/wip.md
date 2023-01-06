@@ -5,12 +5,12 @@ subtitle: What I've been working on
 ---
 
 Hi,
-I'm pleased to show you all the projects I've been working on.
+As I am working on multiple projects at oance, ive compiled a Status Page for each.
 
 ## [FRSH CLI]()
-
 ### Automating project resources allocation 
-I've always wanted to make mike life easyer when I'm starting a new project, so I've been working on an project automation platform. It creates my local environment and allocates the 3rd party resources I might need eg. Github repository, Asana project board, Google drive folder with project documents filled in enough to get me started.
+
+- 06-01-2023 - I've always wanted to make mike life easyer when I'm starting a new project, so I've been working on an project automation platform. It creates my local environment and allocates the 3rd party resources I might need eg. Github repository, Asana project board, Google drive folder with project documents filled in enough to get me started.
 
 ## [Y-Tools]()
 
