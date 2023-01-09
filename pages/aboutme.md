@@ -13,11 +13,13 @@ Data science and artificial intelligence is my current hill to conquer.
 
 Personally I develop various software projects which at some point I would want to migrate to a product form or just work on them for learning and fun, from process automation to product and design, from machine learning and artificial intelligence projects to SaaS solutions.
 
-### My story
+<!-- ### My story
 
-Why don't you just watch [my movie](https://ciobanul.co.uk) and it will answer **all** your questions.
+Why don't you just watch [my movie](https://ciobanul.co.uk) and it will answer **all** your questions. -->
 
 # Contact me
+If you have something in mind that we can do togheter why not send me a message and we'll scheme togheter.
+
 <br>
 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 <script>
