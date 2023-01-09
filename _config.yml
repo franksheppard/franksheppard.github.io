@@ -21,6 +21,7 @@ navbar-links:
     - FRSH Coin: "/pages/frshcoin"
     - Realstar: "/pages/realstar"
     - Photo: "/pages/photography"
+    - YTools: "/pages/ytools"
   Blog: "/pages/blog"
   Wip: "/pages/wip"
   # Resources:
