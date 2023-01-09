@@ -1070,7 +1070,7 @@ img {
 /* Button */
 .center_btn {
   display: flex;
-  width: 200px;
+  width: 250px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -1098,7 +1098,7 @@ img {
   margin: 0;
   outline: none;
   overflow: visible;
-  padding: 13px 16px;
+  padding: 20px 16px;
   text-align: center;
   text-transform: uppercase;
   touch-action: manipulation;
