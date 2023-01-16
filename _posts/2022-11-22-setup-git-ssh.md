@@ -6,6 +6,6 @@ subtitle: Setup your git workflow to work with ssh
 thumbnail-img: /assets/img/thumb.png
 # share-img: /assets/img/path.jpg
 tags: [git, ssh]
-published: true
+published: false
 ---
 
