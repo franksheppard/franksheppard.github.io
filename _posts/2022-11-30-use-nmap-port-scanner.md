@@ -1,13 +1,14 @@
 ---
 layout: post
 title: How to use nmap to scan open ports
-subtitle: 
+subtitle: A guide to nmap
 # cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
 # share-img: /assets/img/path.jpg
-tags: [python, mac]
+tags: [networking, linux]
 published: true
 ---
+
 ## Introduction
 
 Networking is an expansive and overwhelming topic for many budding system administrators. There are various layers, protocols, and interfaces, and many tools and utilities that must be mastered to understand them.

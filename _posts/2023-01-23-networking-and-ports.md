@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Networking 101 - What are ports
-subtitle: 
+subtitle: A guide to network ports
 # cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
 # share-img: /assets/img/path.jpg
