@@ -1,7 +1,7 @@
 ---
 layout: post
-title: How to use git with multi Github accounts
-subtitle: Setup your git to work with multiple Github accounts
+title: How to use multiple Github accounts
+subtitle: Setup your git workflow with multiple Github accounts on one computer
 # cover-img: /assets/img/markus-winkler-ZDwh_sxsX2g-unsplash.jpg
 thumbnail-img: /assets/img/roman-synkevych-wX2L8L-fGeA-unsplash-thumb.jpeg
 # share-img: /assets/img/markus-winkler-ZDwh_sxsX2g-unsplash.jpg
@@ -12,11 +12,13 @@ For my workflow I opted to create another Github account to use it for work proj
 
 ## How I've set it up
 
-01. Create a copy of `~/.ssh/config ` and name it `config.personal` and respectively `config.work`
+1. Create a copy of `~/.ssh/config` and name it `config.personal` and respectively `config.work`
 
-`mv ~/.ssh/config ~/.ssh/config.personal && mv ~/.ssh/config ~/.ssh/config.work`
+```bash
+mv ~/.ssh/config ~/.ssh/config.personal && mv ~/.ssh/config ~/.ssh/config.work
+```
 
-02. Update the keys respectively for each `.ssh/config` work and personal
+2. Update the keys respectively for each `.ssh/config` work and personal
 
 ```sh
 Host github.com
@@ -25,8 +27,7 @@ Host github.com
         IdentityFile ~/.ssh/id_rsa
 ```
 
-03. edit your `~/.bashrc` or `~/.zshrc` or `~/.bash_profile` and paste in the below script.
-
+3. edit your `~/.bashrc` or `~/.zshrc` or `~/.bash_profile` and paste in the below script.
 
 ```bash
 git-switch(){
