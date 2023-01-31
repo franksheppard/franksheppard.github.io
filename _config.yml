@@ -16,12 +16,12 @@ author: Florin Ciobanu
 navbar-links:
   About Me: "/pages/aboutme"
   Projects:
-    - FRSH CLI: "/pages/frshcli"
-    - FRSH Pay: "/pages/frshpay"
-    - FRSH Coin: "/pages/frshcoin"
-    - Realstar: "/pages/realstar"
-    - Photo: "/pages/photography"
-    - YTools: "/pages/ytools"
+    - FRSH CLI: "/projects/frshcli"
+    - FRSH Pay: "/projects/frshpay"
+    - FRSH Coin: "/projects/frshcoin"
+    - Realstar: "/projects/realstar"
+    - Photo: "/projects/photography"
+    - YTools: "/projects/ytools"
   Blog: "/pages/blog"
   Wip: "/pages/wip"
   # Resources:
