@@ -6,6 +6,10 @@ subtitle: Setup your git workflow with multiple Github accounts on one computer
 thumbnail-img: /assets/img/roman-synkevych-wX2L8L-fGeA-unsplash-thumb.jpeg
 # share-img: /assets/img/markus-winkler-ZDwh_sxsX2g-unsplash.jpg
 tags: [github, ssh]
+readtime: true
+social-share: true
+nav-short: false
+last-updated: false
 ---
 
 For my workflow I opted to create another Github account to use it for work projects. In order to juggle my work and personal Github accounts, I've set up git cli with different ssh keys. I've tried using the same ssh key for both Github accounts but the key is rejected if it has been used on another accounts. To get arround this I'm using the folwing setup. I am using a Macbook but it can work on Windows WSL though I haven't tested it.
