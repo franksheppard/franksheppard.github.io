@@ -17,7 +17,7 @@ Personally I develop various software projects which at some point I would want 
 
 Why don't you just watch [my movie](https://ciobanul.co.uk) and it will answer **all** your questions. -->
 
-# Contact me
+## Contact me
 If you have something in mind that we can do togheter why not send me a message and we'll scheme togheter.
 
 <br>
