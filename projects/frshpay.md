@@ -5,18 +5,17 @@ subtitle: Payment processing service
 ---
 
 
-
-
-# Whitepaper
-
-## Abstract
+**Abstract**
 
 FRSH Pay is an exciting new payment system / transaction server built on python
 
-## Introduction
+**Introduction**
 
-## Project Development
 
-## Infrastructure
+**Project Development**
 
-## Conclusion
+
+**Infrastructure**
+
+
+**Conclusion**

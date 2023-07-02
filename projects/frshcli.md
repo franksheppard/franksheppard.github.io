@@ -4,13 +4,13 @@ title: FRSH CLI
 subtitle: Automating project resources allocation 
 ---
 
-# Whitepaper
 
-## Abstract
+
+**Abstract**
 
 FRSH CLI is a SaaS platform to automate creation and allocation of resources for new projects.
 
-## Intoduction
+**Intoduction**
 
 I've been looking to make my life easyer when I'm starting a new project, when it comes to setting up all the basic services I need to manage and develop the project, like:
 
@@ -25,11 +25,11 @@ You interact with the service via a CLI client but you have access to a dashboar
 It creates my local environment and allocates the 3rd party resources I might need eg. Github repository, Asana project board, Google drive folder with project documents filled in enough to get me started.
 
 
-## Project development
+**Project development**
 
 
-## Infrastructure
+**Infrastructure**
 
 
-## Conclusion
+**Conclusion**
 
