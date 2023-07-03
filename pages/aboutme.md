@@ -16,16 +16,3 @@ Personally I develop various software projects which at some point I would want 
 <!-- ### My story
 
 Why don't you just watch [my movie](https://ciobanul.co.uk) and it will answer **all** your questions. -->
-
-**Contact me**
-If you have something in mind that we can do togheter why not send me a message and we'll scheme togheter.
-
-<br>
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-<script>
-  hbspt.forms.create({
-    region: "na1",
-    portalId: "9196907",
-    formId: "eb1b85e6-0209-4f30-997f-4b7305d32b3d"
-  });
-</script>

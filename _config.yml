@@ -22,8 +22,10 @@ navbar-links:
     - Realstar: "/projects/realstar"
     - Photo: "/projects/photography"
     - YTools: "/projects/ytools"
+    - Wip: "/pages/wip" 
   Blog: "/pages/blog"
-  Wip: "/pages/wip"
+  Contact: "/pages/contact"
+
   # Resources:
   #   - Beautiful Jekyll: "https://beautifuljekyll.com"
   #   - Learn markdown: "https://www.markdowntutorial.com/"
