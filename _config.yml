@@ -22,7 +22,7 @@ navbar-links:
     - Realstar: "/projects/realstar"
     - Photo: "/projects/photography"
     - YTools: "/projects/ytools"
-    - Wip: "/pages/wip" 
+    - Wip: "/projects/wip" 
   Blog: "/pages/blog"
   Contact: "/pages/contact"
 
