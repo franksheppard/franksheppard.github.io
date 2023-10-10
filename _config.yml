@@ -17,6 +17,7 @@ navbar-links:
   About Me: "/pages/aboutme"
   Projects:
     - FRSH CLI: "/projects/frshcli"
+    - FRSH CLI: "/projects/srmbot"
     # - FRSH Pay: "/projects/frshpay"
     # - FRSH Coin: "/projects/frshcoin"
     # - Realstar: "/projects/realstar"
