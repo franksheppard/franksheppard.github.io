@@ -17,12 +17,12 @@ navbar-links:
   About Me: "/pages/aboutme"
   Projects:
     - FRSH CLI: "/projects/frshcli"
-    - FRSH Pay: "/projects/frshpay"
-    - FRSH Coin: "/projects/frshcoin"
-    - Realstar: "/projects/realstar"
+    # - FRSH Pay: "/projects/frshpay"
+    # - FRSH Coin: "/projects/frshcoin"
+    # - Realstar: "/projects/realstar"
     - Photo: "/projects/photography"
     - YTools: "/projects/ytools"
-    - Wip: "/projects/wip" 
+    # - Wip: "/projects/wip" 
   Blog: "/pages/blog"
   Contact: "/pages/contact"
 
