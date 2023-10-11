@@ -2,7 +2,7 @@
 layout: page
 title: FRSH CLI
 subtitle: Automating project resources allocation
-published: false
+published: true
 ---
 
 
