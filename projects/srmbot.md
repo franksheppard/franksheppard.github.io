@@ -6,7 +6,7 @@ published: false
 ---
 
 ## Presentation
-SRM Bot is what it says it is.  A bot that creates a service management request from your conversation. It analizes and decides if a service request has to be opened and it opens it.
+SRM Bot stands for Service Request Management Bot.  Its main feature is to analyze a chat conversation and creates a service management request from your it. Also with our AI integrations it analizes and decides if a service request is required or not.
 
 ## Quickstart
 **Prerequisites**
