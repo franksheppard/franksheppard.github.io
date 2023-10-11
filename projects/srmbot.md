@@ -2,7 +2,7 @@
 layout: page
 title: SRM Bot
 subtitle: Inteligent service resource management 
-published: false
+published: true
 ---
 
 ## Presentation
